@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, black, grey);
+        color: #fff;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        word-wrap: break-word; /* Allow long words to break */
+        text-align: center; /* Ensure the text is centered */
+        max-width: 90%; /* Limit the width to prevent overflow */
+      }
+
+      #countdown {
+        font-size: 1.5rem;
+        margin-top: 20px;
+      }
+
+      .countdown-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        justify-content: center; /* Center the boxes */
+      }
+
+      .time-box {
+        font-size: 24px;
+      }
+
+      .time-box span {
+        display: block;
+        font-size: 4rem;
+        font-weight: bold;
+      }
+
+      .time-box label {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+    
+    </style>
+  </head>
+  <body>
+    <h1>La Monada en Rio 2025</h1>
+    <div>
+      <div class="countdown-container">
+        <div class="time-box">
+          <span id="days">0</span>
+          <label>Dias</label>
+        </div>
+        <div class="time-box">
+          <span id="hours">0</span>
+          <label>Horas</label>
+        </div>
+        <div class="time-box">
+          <span id="minutes">0</span>
+          <label>Minutos</label>
+        </div>
+        <div class="time-box">
+          <span id="seconds">0</span>
+          <label>Segundos</label>
+        </div>
+      </div>
+      <div id="countdown"></div>
+    </div>
+    <h2>16/11/2025 02:50 -  Aeropuerto de Rosario</h2>
+
+    <script src="script.js"></script>
+  </body>
+</html>
