@@ -5,7 +5,7 @@ function updateCountdown() {
     const diff = targetDate - now;
 
     if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "The countdown has ended!";
+        document.getElementById("countdown").innerHTML = "La monada se fue a RIO!!!";
         return;
     }
 
