@@ -61,9 +61,129 @@
         padding: 0; /* Remove default padding */
         text-align: left; /* Align list content to the left */
       }
+
+      .leader {
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        color: #000;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin: 5px 0;
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+        animation: glow 2s ease-in-out infinite;
+      }
+
+      @keyframes glow {
+        0%, 100% {
+          box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+        }
+        50% {
+          box-shadow: 0 4px 25px rgba(255, 215, 0, 0.8);
+        }
+      }
+
+      ul li {
+        padding: 5px 0;
+      }
+
+      .modal {
+        display: flex;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: linear-gradient(135deg, #333, #666);
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        max-width: 400px;
+        width: 90%;
+      }
+
+      .modal-content h2 {
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+      }
+
+      .close-btn {
+        background: #ff4444;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 15px;
+      }
+
+      .close-btn:hover {
+        background: #cc3333;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .easter-egg {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #ff6b9d;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        opacity: 0;
+        transition: opacity 0.5s;
+        cursor: pointer;
+        z-index: 999;
+      }
+
+      .easter-egg.show {
+        opacity: 1;
+      }
+
+      .baby-countdown {
+        margin-top: 20px;
+        padding: 15px;
+        background: rgba(255, 107, 157, 0.2);
+        border-radius: 10px;
+        border: 2px solid #ff6b9d;
+      }
+
+      .baby-countdown h3 {
+        color: #ff6b9d;
+        margin: 0 0 10px 0;
+      }
+
+      .missing-msg {
+        font-style: italic;
+        color: #ffd700;
+        margin: 10px 0;
+      }
     </style>
   </head>
   <body>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2>Aviso Importante</h2>
+        <p>El Lider va a estar presente!</p>
+        <p><strong>Del 20 al 23 de noviembre</strong></p>
+        <button class="close-btn" onclick="closeModal()">Cerrar</button>
+      </div>
+    </div>
+
     <h1>La Monada en Rio 2025</h1>
     <div>
       <div class="countdown-container">
@@ -88,24 +208,31 @@
     </div>
     <h2>16/11/2025 02:55 -  Aeropuerto de Rosario</h2>
     <ul>
-      <li>1. Cornejo Juan Manuel</li>
-      <li>2. Cossy Leonardo</li>
-      <li>3. Ferrer Facundo</li>
-      <li>4. Gregorutti Pablo</li>
-      <li>5. Guinle Martin</li>
-      <li>6. Minni Joaquin</li>
-      <li>7. Mistura Juan</li>
-      <li>8. Ramirez Montrul Juan Manuel</li>
-      <li>9. Rios Julian</li>
-      <li>10. Rodriguez Juan Manuel</li>
-      <li>11. Romero Alfredo</li>
-      <li>12. Sampayo Nicolas</li>
-      <li>13. Sarmiento Ignacio</li>
-      <li>14. Scheifler Cristian</li>
-      <li>15. Taffarel Facundo</li>
-      <li>16. Tarzia Nicolas</li>
-      <li>17. Uranga Ramiro</li>
+      <li class="leader">1. Chemes Salim 👑</li>
+      <li>2. Cornejo Juan Manuel</li>
+      <li>3. Cossy Leonardo</li>
+      <li>4. Ferrer Facundo</li>
+      <li>5. Gregorutti Pablo</li>
+      <li>6. Guinle Martin</li>
+      <li>7. Minni Joaquin</li>
+      <li>8. Mistura Juan</li>
+      <li>9. Ramirez Montrul Juan Manuel</li>
+      <li>10. Rios Julian</li>
+      <li>11. Rodriguez Juan Manuel</li>
+      <li>12. Romero Alfredo</li>
+      <li>13. Sampayo Nicolas</li>
+      <li>14. Sarmiento Ignacio</li>
+      <li>15. Scheifler Cristian</li>
+      <li>16. Taffarel Facundo</li>
+      <li>17. Tarzia Nicolas</li>
+      <li>18. Uranga Ramiro</li>
     </ul>
+
+    <!-- Easter egg popup -->
+    <div id="easter-egg" class="easter-egg" onclick="hideEasterEgg()">
+      <span id="easter-message">👶 Plot twist: ¡Salim va a ser papá!</span>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

@@ -20,5 +20,15 @@ function updateCountdown() {
     document.getElementById("seconds").textContent = seconds;
 }
 
+// Modal functionality
+function closeModal() {
+    document.getElementById("modal").classList.add("hidden");
+}
+
+// Show modal on page load
+window.addEventListener("load", function() {
+    document.getElementById("modal").classList.remove("hidden");
+});
+
 setInterval(updateCountdown, 1000);
 updateCountdown();
